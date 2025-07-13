@@ -1,0 +1,20 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0; /* o el color que uses */
+  z-index: 10;
+  height: 50px;
+}
+
+.footer svg {
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}

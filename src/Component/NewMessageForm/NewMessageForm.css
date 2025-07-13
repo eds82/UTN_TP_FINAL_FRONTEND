@@ -1,0 +1,22 @@
+.message-form {
+  display: flex;
+  padding: 10px;
+  background: #f1f1f1;
+}
+
+.message-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.message-form button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}

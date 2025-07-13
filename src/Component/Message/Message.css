@@ -1,0 +1,60 @@
+.message {
+  max-width: 60%;
+  word-wrap: break-word;
+  padding: 6px 10px;
+  border-radius: 6px;
+  display: flex; /* 👈 */
+  flex-direction: column;
+}
+
+.my-message {
+  background-color: #dcf8c6;
+  margin-left: auto;
+  text-align: left;
+  align-self: flex-end;
+}
+
+.their-message {
+  background-color: #fff;
+  margin-right: auto;
+  text-align: left;
+  align-self: flex-start;
+}
+
+.message-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  color: #6d6b6b;
+}
+
+.message-time {
+  font-size: 0.7rem;
+  color: #6d6b6b;
+  text-align: right;
+}
+
+.message-status {
+  margin-left: 4px;
+  font-size: 0.8rem;
+}
+
+.delete-icon {
+  cursor: pointer;
+  color: #e74c3c;
+  font-size: 1rem;
+  margin-left: 6px;
+  transition: color 0.2s ease;
+}
+
+.delete-icon:hover {
+  color: #c0392b;
+}

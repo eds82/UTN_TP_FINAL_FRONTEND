@@ -1,0 +1,63 @@
+
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 1px solid #ddd; /* esta es la línea divisoria */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-item:last-child {
+  border-bottom: none; /* Para que el último no tenga línea abajo */
+}
+
+.contact-item:hover {
+  background-color: #f0f0f0; 
+  cursor: pointer;
+  transform: translateY(-1px);
+}
+
+.contact-left {
+  display: flex;
+  align-items: center;
+}
+
+.contact-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.contact-message {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+.contact-time {
+  font-size: 0.8rem;
+  color: #888;
+}
+.message-status {
+  margin-left: 5px;
+  font-size: 0.8rem;
+  color: gray;
+}
+.message-status.visto {
+  color: dodgerblue;
+}

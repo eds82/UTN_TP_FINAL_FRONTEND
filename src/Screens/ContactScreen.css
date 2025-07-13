@@ -1,0 +1,81 @@
+.contact-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  align-items: center;
+  padding: 16px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.contact-header h2{
+  color: rgb(11, 104, 11);
+}
+
+.menu-container {
+  position: relative;
+}
+
+.contact-search {
+  width: 100%;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: rgb(11, 104, 11);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f5f5f5;
+}
+
+.contact-search input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-bottom: 2px solid #25d366; /* verde WhatsApp */
+  font-size: 14px;
+}
+.contact-search input:focus {
+  border-bottom-color: #128c7e; /* tono más oscuro al enfocar */
+}
