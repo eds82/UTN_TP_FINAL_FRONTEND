@@ -6,14 +6,14 @@
   display: flex; /* 👈 */
   flex-direction: column;
 }
-
+/* Alineando mi mensaje a la derecha */
 .my-message {
   background-color: #dcf8c6;
   margin-left: auto;
   text-align: left;
   align-self: flex-end;
 }
-
+/* alineando el mensaje a la izquierda */
 .their-message {
   background-color: #fff;
   margin-right: auto;
@@ -57,4 +57,23 @@
 
 .delete-icon:hover {
   color: #c0392b;
+}
+
+@media screen and (max-width: 420px) {
+  .message {
+    padding: 5px 8px;
+    margin-bottom: 5px;
+    max-width: 85%;
+  }
+  .message p {
+    font-size: 0.9rem;
+  }
+  .message-meta {
+    font-size: 0.6rem;
+    gap: 2px;
+  }
+  .delete-icon {
+    font-size: 0.8rem;
+    margin-left: 4px;
+  }
 }

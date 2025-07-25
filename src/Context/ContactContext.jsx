@@ -1,12 +1,13 @@
 import { createContext, useState } from "react";
 
-//Contexto general para manejar los contactos
+//Contexto general para manejar la lista de contactos en toda la aplicacion
 export const ContactContext = createContext({
   contacts: [],
   setContacts: () => {}
 });
 
 const ContactContextProvider = ({ children }) => {
+  // Estado global de los contactos
   const [contacts, setContacts] = useState([
     {
       id: 1,
@@ -60,6 +61,17 @@ const ContactContextProvider = ({ children }) => {
       last_message: {
         id: 7,
         text: 'Como estas Sara?',
+        status: 'visto'
+      }
+    },
+    {
+      id: 6,
+      name: 'Yesica stewart',
+      last_time_connected: '14:15',
+      img: 'https://randomuser.me/api/portraits/women/32.jpg',
+      last_message: {
+        id: 8,
+        text: 'Como estas Yesica?',
         status: 'visto'
       }
     }

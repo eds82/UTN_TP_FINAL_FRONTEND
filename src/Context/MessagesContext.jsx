@@ -114,6 +114,15 @@ const MessagesContextProvider = ({ children }) => {
       texto: 'Como estas Sara?',
       status: 'visto'
     },
+    {
+      contactId: 6,
+      emisor: 'YO',
+      hora: '13:04',
+      id: 13,
+      texto: 'Como estas Sara?',
+      status: 'visto'
+    },
+
 
   ]);
 

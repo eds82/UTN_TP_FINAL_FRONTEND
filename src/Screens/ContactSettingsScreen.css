@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM Sans", sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-size: 1rem;
+}
+:root {
+  /* Colores... */
+  --color-primary-dark: rgb(42, 49, 42);
+  --color-text-white: white;
+  --color-border-gray: gray;
+  --color-accent-green: rgb(12, 172, 12);
+  --color-border-light: #aaa;
+/*Tamaños... */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+}
+
+/* Contenedor principal ocupa todo el alto de la pantalla */
+.contact-settings-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* altura total de la ventana */
+  padding: 12px;
+}
+
+
+.settings-header {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-primary-dark);
+  position: relative;
+}
+
+.settings-header .s-header-icons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  gap: 10px;
+  margin: 16px auto;
+  padding: 0 10px;
+}
+.s-header-i-phone {
+  font-size: var(--font-lg);
+  color: var(--color-accent-green);
+}
+.text-phone, .text-video, .text-buscar{
+  text-align: center;
+  font-size: var(--font-xs);
+  color: var(--color-text-white);
+  margin: 0;
+  margin-top: 5px; /* separacion entre el icono y el texto */
+}
+.s-icon-button
+ {
+  border: 1px solid var(--color-border-gray);
+  padding: 8px;
+  border-radius: 16px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 150px;
+  margin: 0 10px;
+  cursor: pointer;
+ }
+
+.s-header-video {
+  font-size: var(--font-lg);
+  color: var(--color-accent-green);
+}
+
+.s-header-search {
+  font-size: var(--font-lg);
+  color: var(--color-accent-green) ;
+}
+
+.back-arrow {
+  position: absolute;
+  margin-top: 20px;
+  left: 16px; 
+  font-size: var(--font-sm);
+  text-decoration: none;
+  color: var(--color-text-white);
+  cursor: pointer;
+  text-shadow: 1px 0 0 white,
+  -1px 0 0 white,
+  0 1px 0 white,
+  0 -1px 0 white;
+}
+
+/* Info del contacto alineado */
+.contact-info {
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+  color: var(--color-text-white);
+}
+
+.settings-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+}
+
+/* Opciones: ocupan el resto */
+.settings-options {
+  flex: 1; /* Para que ocupe todo el espacio restante */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-primary-dark);
+  padding: 8px;
+  overflow-y: auto;
+}
+
+/* Cada opción llena equitativamente el espacio disponible */
+.option {
+  flex: 1; /* igual altura para todos */
+  border-bottom: 3px solid var(--color-accent-green) ;
+  display: flex;
+  /* align-items: center; */
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: var(--font-md);
+  user-select: none;
+  flex-direction: column;
+  text-align: left;
+  color: var(--color-text-white);
+}
+
+.option span {
+  color: var(--color-border-light); /* gris claro */
+  font-size: var(--font-sm);
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+/* Puedes agregar hover para las options */
+.option:hover {
+  background-color: var(--color-accent-green);
+}
+
+.s-contact-menu {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: var(--font-sm);
+  color: var(--color-text-white);
+  margin-top: 0;
+  display: none;
+  cursor: pointer;
+
+}
+
+/* Aca empiezan las media Querie */
+@media ( max-width: 768px){
+
+  .s-icon-button {
+    width: auto;
+    height: 55px;
+    padding: 6px;
+  }
+  .s-header-i-phone, .s-header-search, .s-header-video{
+    font-size: var(--font-md);
+  }
+  .text-buscar, .text-phone, .text-video{
+    font-size: var(--font-sm);
+    margin-top: 3px;
+  }
+  .settings-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 425px) {
+  .s-contact-menu {
+    display: flex;
+  }
+  .back-arrow {
+    font-size: var(--font-xs);
+  }
+  .s-header-icons {
+    gap: 5px;
+  }
+  .s-header-i-phone,
+  .s-header-search,
+  .s-header-video {
+    font: var(--font-md);
+    margin: 0 3px;
+  }
+  .text-phone, .text-buscar, .text-video {
+    font-size: 0.75rem;
+  }
+  .s-icon-button {
+    margin: 0 2px;
+  }
+  .option {
+    font-size: var(--font-sm);
+  }
+  .contact-info h2{
+    font-size: var(--font-lg);
+  }
+  .contact-info p{
+    font-size: var(--font-xs);
+  }
+}
+

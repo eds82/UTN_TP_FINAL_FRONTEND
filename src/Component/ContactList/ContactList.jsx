@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { ContactContext } from "../../Context/ContactContext";
 import ContactItem from "../ContactItem/ContactItem";
 import "./ContactList.css";
+import { FaSquarePlus } from "react-icons/fa6";
 
 const ContactList = ({searchTerm} ) => {
   const { contacts } = useContext(ContactContext);
@@ -14,6 +15,9 @@ const ContactList = ({searchTerm} ) => {
       {filteredContacts.map(contact => (
         <ContactItem key={contact.id} {...contact} />
       ))}
+      <div className="whatsapp-icon-container">
+          <FaSquarePlus className="plus-icon"/>
+      </div>
     </div>
   );
 };

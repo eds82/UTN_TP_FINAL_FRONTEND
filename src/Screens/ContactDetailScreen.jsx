@@ -6,7 +6,12 @@ import "../index.css"
 import { MessagesContext } from "../Context/MessagesContext";
 import { IoSend } from "react-icons/io5";
 import { BsPaperclip } from "react-icons/bs";
-import { FaRegSmile } from "react-icons/fa";
+import { FaRegSmile, FaEllipsisV } from "react-icons/fa";
+import { HiOutlinePhone } from "react-icons/hi";
+import DropdownMenu from "../Component/DropdownMenu/DropdownMenu";
+
+// Pantalla de detalle de contacto
+// Muestra el encabezado del chat, los mensajes y un formulario para enviar mensajes
 
 export default function ContactDetailScreen() {
   const { id } = useParams();
@@ -15,6 +20,11 @@ export default function ContactDetailScreen() {
   const { addNewMessage } = useContext(MessagesContext);
 
   const [newMessage, setNewMessage] = useState("");
+  const [showMenu, setShowMenu] = useState(false);
+
+const toggleMenu = () => {
+  setShowMenu(!showMenu);
+};
 
   const contact = contacts.find(c => c.id === parseInt(id));
 
@@ -31,17 +41,40 @@ export default function ContactDetailScreen() {
     <div className="chat-container">  {/* Este es header */}
 
       <div className="chat-header">
-        <Link to="/" className="back-arrow">⬅</Link>
-        <img src={contact.img} alt={`${contact.name} profile`} className="contact-profile" />
-        <div className="chat-header-info">
-          <h2>{contact.name}</h2>
-          <p>Última conexión: a las {contact.last_time_connected}</p>
+        <div className="h-left" >
+          <Link to="/" className="back-arrow">⬅</Link>
+          
+          <Link to={`/settings/${contact.id}`}>
+            <img src={contact.img} alt={`${contact.name} profile`} className="chat-profile" />
+          </Link>
+          
+          <div className="chat-header-info">
+            <h2>{contact.name}</h2>
+            <p>Última conexión: a las {contact.last_time_connected}</p>
+          </div>
         </div>
+        
+        <div className="h-right" >
+          <HiOutlinePhone className="h-right-phone"/>
+          <DropdownMenu className="menu-detail-screen" contactId={contact.id}
+            menuItems={[
+              { link: `/contact/:id/settings`, label: 'Ver contacto', className: 'enlace-text'},
+              { label: 'Buscar' },
+              { label: 'Añadir a lista' },
+              { label: 'Silenciar notificaciones' },
+              { label: 'Temas del chat' },
+            ]}
+          />
+        </div>
+        
       </div>
 
+    {/* los mensajes */}
       <div className="chat-body">
         <ChatMessages contactId={contact.id} />
       </div>
+
+    {/* Formulario para enviar mensaje */}
       <div className="chat-input-container">
 
         <div className="emoji-container">
